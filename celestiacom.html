@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELESTIACOM</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #003366; /* Azul oscuro */
+            color: white;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 300px; /* Ajuste de padding del encabezado */
+        }
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        .text-center {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header h1 {
+            font-family: Arial, sans-serif;
+            font-size: 3rem;
+        }
+        .header p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.25rem;
+        }
+
+        /* Sección introductoria */
+        .intro-section {
+            background-color: #1a1a1a; /* Franja oscura */
+            border: 2px solid white; /* Bordes blancos */
+            padding: 20px 0; /* Espaciado interno */
+        }
+        .intro-section h2 {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        /* Estaciones terrenas */
+        .stations-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+        .station-card {
+            width: 30%;
+            border: 2px solid white; /* Bordes blancos */
+            border-radius: 15px;
+            padding: 40px 0; /* Aumento de la altura vertical de las tarjetas */
+            background-color: #1a1a1a; /* Fondo oscuro de las tarjetas */
+            text-align: center;
+            color: white; /* Texto blanco */
+            min-height: 350px; /* Asegura que las tarjetas tengan una altura mínima */
+            cursor: pointer; /* Cambiar el puntero al pasar sobre la tarjeta */
+        }
+        .station-card h3 {
+            font-family: Arial, sans-serif;
+            font-size: 1.75rem;
+        }
+        .station-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        /* Nueva sección de detalles */
+        .details-section {
+            margin: 50px 0;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid white;
+        }
+        .details-section h3 {
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            border: 2px solid white;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        .detail {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo-placeholder">
+            <!-- Logo izquierdo -->
+        </div>
+        <div class="text-center">
+            <h1>CELESTIACOM</h1>
+            <p>Comunicación interplanetaria, a nivel terrenal</p>
+        </div>
+        <div class="logo-placeholder">
+            <!-- Logo derecho -->
+        </div>
+    </header>
+
+    <!-- Sección introductoria -->
+    <section class="intro-section">
+        <h2>DESCUBRE LO QUE SE RECIBIÓ EN:</h2>
+    </section>
+
+    <!-- Estaciones Terrenas -->
+    <section class="stations-container">
+        <!-- Estación Colima -->
+        <div class="station-card" onclick="showDetails('Colima')">
+            <h3>Colima</h3>
+            <img src="colima.jpg" alt="Estación Terrena en Colima">
+        </div>
+
+        <!-- Estación CDMX -->
+        <div class="station-card" onclick="showDetails('CDMX')">
+            <h3>CDMX</h3>
+            <img src="cdmx.jpg" alt="Estación Terrena en CDMX">
+        </div>
+
+        <!-- Estación Querétaro -->
+        <div class="station-card" onclick="showDetails('Querétaro')">
+            <h3>Querétaro</h3>
+            <img src="queretaro.jpg" alt="Estación Terrena en Querétaro">
+        </div>
+    </section>
+
+    <!-- Sección de detalles (inicialmente oculta) -->
+    <section id="details-section" class="details-section" style="display:none;">
+        <h3 id="station-title">Estación Terrena</h3>
+
+        <!-- Datos específicos con descripción al pasar el mouse -->
+        <div id="data-1" class="detail" title="Descripción breve sobre el dato 1">Dato 1: Información relevante</div>
+        <div id="data-2" class="detail" title="Descripción breve sobre el dato 2">Dato 2: Información relevante</div>
+        <div id="data-3" class="detail" title="Descripción breve sobre el dato 3">Dato 3: Información relevante</div>
+    </section>
+
+    <!-- Bootstrap JS (opcional, si necesitas interacciones dinámicas) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script para mostrar detalles de la estación seleccionada -->
+    <script>
+        function showDetails(station) {
+            // Mostrar la sección de detalles
+            document.getElementById('details-section').style.display = 'block';
+            
+            // Establecer el título de la estación seleccionada
+            document.getElementById('station-title').innerText = 'Estación Terrena: ' + station;
+
+            // Aquí puedes agregar datos específicos para cada estación
+            // Por ejemplo:
+            if (station === 'Colima') {
+                document.getElementById('data-1').innerText = 'Colima: Datos específicos de la estación Colima';
+                document.getElementById('data-2').innerText = 'Colima: Más datos importantes';
+                document.getElementById('data-3').innerText = 'Colima: Otro dato relevante';
+            } else if (station === 'CDMX') {
+                document.getElementById('data-1').innerText = 'CDMX: Datos específicos de la estación CDMX';
+                document.getElementById('data-2').innerText = 'CDMX: Más datos importantes';
+                document.getElementById('data-3').innerText = 'CDMX: Otro dato relevante';
+            } else if (station === 'Querétaro') {
+                document.getElementById('data-1').innerText = 'Querétaro: Datos específicos de la estación Querétaro';
+                document.getElementById('data-2').innerText = 'Querétaro: Más datos importantes';
+                document.getElementById('data-3').innerText = 'Querétaro: Otro dato relevante';
+            }
+        }
+    </script>
+</body>
+</html>
