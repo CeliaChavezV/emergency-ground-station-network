@@ -2,6 +2,7 @@
 
 ## 🌍 Project Overview
 A web-based platform for managing and documenting emergency communications through a global network of verified ground stations. This system creates a centralized registry of transmitted/received files across participating stations while maintaining strict authentication protocols for operators.
+It allows verified operators to document all transmissions and receptions with timestamps, frequency data, and file attachments, while implementing strict authentication protocols to ensure only legitimate ground stations can participate. The system serves as a digital logbook for emergency satellite communications, featuring hardware validation, end-to-end encryption, and multi-level access controls to maintain data integrity and prevent unauthorized access, ultimately creating a reliable global network for crisis response communications.
 
 ## 🚀 Key Features
 - **Secure Ground Station Registry**  
